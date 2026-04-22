@@ -30,6 +30,7 @@ The folder structure of this repository is as follows:
 Each numerical test in the `example_??_!!` folder consists of two files:
 - An executable file which starts with the prefix `pod_error_comparison_????`. You can execute these files from the command line without any additional arguments.
 - A settings file in which the problem settings for the corresponding numerical test are specified. You can change the problem settings of a numerical tests in this file.
+- Since the execution of the numerical test in example_4_2 takes some time, the data has been cached in the `circle_data.npz` file. The `circle_data.npz` file has to be in the same folder as the `pod_error_comparison_circle.py` file. In order to load the data from the file, the `load_matrices_from_file` variable in `pod_error_comparison_circle.py` has to be set to `True`.
 
 
 ## License
