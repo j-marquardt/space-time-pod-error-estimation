@@ -89,7 +89,7 @@ L_s, L_y = helper.get_mass_matrix_factors(grid, settings)
 
 L_s_inv, L_y_inv = helper.get_mass_matrix_inv_factors(grid, settings)
 
-J_s, _ = helper.get_stiff_matrix_factors(grid, settings)
+J_s, J_y = helper.get_stiff_matrix_factors(grid, settings)
 
 
 #################################
@@ -105,8 +105,11 @@ if create_eigevalues_comparison_plot:
 #############################
 
 # we investigate the constant from the proof of Proposition 3.3
-C_Y_hat_to_S_hat = np.linalg.norm(L_s_inv @ J_s, ord="fro")
-print("Constant: " + str(C_Y_hat_to_S_hat))
+C_s = np.linalg.norm(L_s_inv @ J_s, ord="fro")
+print("Norm s: " + str(C_s))
+
+C_y = np.linalg.norm(L_y_inv @ J_y, ord="fro")
+print("Norm y: " + str(C_y))
 
 if load_matrices_from_file:
     
